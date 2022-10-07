@@ -2,6 +2,30 @@
     text-align: center;
 }
 
+.main {
+    background-color: slategray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    justify-content: center;
+}
+
 .text {
     text-align: center;
+}
+
+.button {
+    background-color: aqua;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
 }

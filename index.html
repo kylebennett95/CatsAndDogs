@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cats & Dogs</title>
-</head>
-<body class="main">
+  </head>
+  <body class="main">
     <main>
-        <h1 class="header">Raining Cats & Dogs</h1>
-        <h2 class="header">Are you a dog person, or a cat person?</h2>
-        <form class="voteForm">
-            <fieldset class="catForm">
-                <label for="catVote">
-                    <h1 class="text">Team Cat</h1>
-                    <div id="cat"></div>
-                    <button type="button" class="button">Cats!!!</button>
-                </label>
-            </fieldset>
-            <fieldset class="dogForm">
-                <label for="dogVote">
-                    <h1 class="text">Team Dog</h1>
-                    <div id="dog"></div>
-                    <button type="button" class="button">Dogs!!!</button>
-                </label>
-            </fieldset>
-            <fieldset>
-                <label for="scoreBoard">
-                    <h1 class="text">Score Board</h1>
-                    <div id="score"></div>
-                </label>
-            </fieldset>
-        </form>
+      <div class="mainHeader">
+        <h1 class="subHeader title">Raining Cats & Dogs</h1>
+        <h2 class="subHeader">Are you a dog person, or a cat person?</h2>
+      </div>
+      <div>
+        <div class="scoreContainer">
+          <div class="scoreBoard">
+            <div class="scoreSubHead">
+              <h1 class="text">Score Board</h1>
+            </div>
+            <div id="score"></div>
+          </div>
+        </div>
+      </div>
+      <div class="data">
+        <div class="catsDiv">
+          <form class="voteForm">
+            <div class="catForm">
+              <label for="catVote">
+                <h1 class="text">Team Cat</h1>
+                <div id="cat"></div>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="dogsDiv">
+          <form class="voteForm">
+            <div class="dogForm">
+              <label for="dogVote">
+                <h1 class="text">Team Dog</h1>
+                <div id="dog"></div>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
     <script type="module" src="./scripts/main.js" async defer></script>
-</body>
+  </body>
 </html>

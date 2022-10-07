@@ -30,6 +30,7 @@ const renderDogToDOM = () => {
     <article>
         <section class="card">
         <img src="${getDog()[0].url}" alt="image" class="image">
+        <button onclick="pushDog" type="button" class="button">Dogs!!!</button>
     </section>
     </article>`;
 document.getElementById("dog").innerHTML = html

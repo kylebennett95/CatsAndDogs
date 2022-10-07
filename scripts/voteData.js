@@ -3,8 +3,11 @@ const dogAPI = "https://api.thedogapi.com/v1/images/search"
 
 const applicationState = {
     dogs: [],
-    cats: []
+    cats: [],
+    dogVote: [],
+    catVote: []
 }
+
 
 
 // fetch commands go to the API 
@@ -27,3 +30,19 @@ export const getCat = () => {
 export const getDog = () => {
     return applicationState.dogs.map((x) => ({ ...x }));
 }
+
+
+
+
+//UNTESTED CODE BELOW
+export const pushDog = () => {
+    applicationState.dogVote.push();
+    document.getElementById("dogScore").innerHTML
+}
+
+export const pushCat = () => {
+    applicationState.catVote.push();
+    document.getElementById("catScore").innerHTML
+}
+
+const mainContainer = document.querySelector("#container")

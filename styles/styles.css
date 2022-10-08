@@ -10,7 +10,7 @@ html {
 }
 .mainHeader {
   /* border: 1px solid red; */
-  background-color: rgb(54, 49, 49);
+  background-color: rgb(48, 48, 48);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,16 +48,15 @@ html {
   margin: 10px;
   background-color: rgb(36, 34, 34);
 }
-/* .image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  height: 500px;
-} */
-
+.image {
+  height: 450px;
+  width: 450px;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-top: 40px;
+}
 .data {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -65,12 +64,37 @@ html {
 }
 
 .catsDiv {
-  border: 2px solid pink;
-  margin-right: 150px;
+  /* border: 2px solid pink; */
+  background-color: rgb(72, 72, 72);
+  margin-right: 350px;
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+  width: 700px;
+  align-items: center;
+  border-radius: 30px;
+  margin-bottom: 100px;
 }
 
 .dogsDiv {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
+  background-color: rgb(72, 72, 72);
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+  width: 700px;
+  align-items: center;
+  border-radius: 30px;
+  margin-bottom: 100px;
+}
+
+.cardHeader {
+  /* border: 2px solid pink; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 40px;
+  font-size: 50px;
 }
 
 /* .text {

@@ -55,6 +55,11 @@ html {
   object-fit: cover;
   margin-top: 40px;
 }
+
+.image:hover {
+  cursor: pointer;
+}
+
 .data {
   /* border: 2px solid red; */
   display: flex;
@@ -74,6 +79,18 @@ html {
   align-items: center;
   border-radius: 30px;
   margin-bottom: 100px;
+}
+
+.catsDiv:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgb(112, 114, 112);
+  transition: all 500ms ease;
+}
+
+.dogsDiv:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgb(112, 114, 112);
+  transition: all 500ms ease;
 }
 
 .dogsDiv {

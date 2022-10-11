@@ -1,4 +1,4 @@
-import { fetchCat, fetchDog } from "./voteData.js";
+import { fetchCat, sendCatScoreToAPI } from "./voteData.js";
 import { fetchDog} from "./voteData.js";
 import { renderCatScoreToDOM, renderDogScoreToDOM } from "./main.js"
 import { addCat, addDog } from "./voteData.js";
@@ -19,25 +19,22 @@ const scoreDog = async () => {
 
 catContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "catPic") {
-       
-      // 1 get the specific object that relates to the image
-      let scoreCat = scoreCat()
+        // Get what the user typed into the form fields
+        const userDescription = document.querySelector("input[name='serviceDescription']").value
+        const userAddress = document.querySelector("input[name='serviceAddress']").value
+        const userBudget = document.querySelector("input[name='serviceBudget']").value
+        const userDate = document.querySelector("input[name='serviceDate']").value
 
-      addCatDog(scoreCat);
-        
-      // 2 push that object into the api
+        // Make an object out of the user input
+        const dataToSendToAPI = {
+            description: userDescription,
+            address: userAddress,
+            budget: userBudget,
+            neededBy: userDate
+        }
 
-    
-    } else if (clickEvent.target.id === "dogPic") { 
-
-        let scoreDog = scoreDog()
-
-        return scoreDog;
-
-    } else { 
-
-        return "error";
-
+        // Send the data to the API for permanent storage
+        sendCatScoreToAPI(dataToSendToAPI)
     }
 
     getCat(dataToSendToAPI)

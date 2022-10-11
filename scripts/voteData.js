@@ -52,7 +52,35 @@ export const getDog = () => {
     return applicationState.dogs.map((x) => ({ ...x }));
 }
 
+export const addCat = async (catObj) => {
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(),
+    };
+    const response = await fetch(`${scoreAPI}/cats`, requestOptions);
+  
+    console.log(response);
+  
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+  }
 
+  export const addDog = async (dogObj) => {
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(),
+    };
+    const response = await fetch(`${scoreAPI}/dogs`, requestOptions);
+  
+    console.log(response);
+  
+    document.dispatchEvent(new CustomEvent("stateChanged"));
+  }
 
 
 //UNTESTED CODE BELOW

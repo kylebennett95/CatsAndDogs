@@ -1,11 +1,41 @@
-import { fetchCat } from "./voteData.js";
-import { fetchDog } from "./voteData.js";
-import { getCat } from "./voteData.js";
-import { getDog } from "./voteData.js";
-import { fetchCatScore } from "./voteData.js";
-import { fetchDogScore } from "./voteData.js";
-import { getCatScore } from "./voteData.js";
-import { getDogScore } from "./voteData.js";
+import { fetchCat, getDogScore, getCatScore, fetchDogScore, fetchCatScore, getDog, getCat, fetchDog, sendCatScoreToAPI, sendDogScoreToAPI } from "./voteData.js";
+
+const catContainer = document.querySelector("#catPic")
+const dogContainer = document.querySelector("#dogPic")
+
+catContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "catPic") {
+
+        // Make an object out of the user input
+        const dataToSendToAPI = {
+            catVote: 1
+        }
+
+        // Send the data to the API for permanent storage
+        sendCatScoreToAPI(dataToSendToAPI)
+    }
+})
+
+dogContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "button") {
+        // Get what the user typed into the form fields
+        const userDescription = document.querySelector("input[name='serviceDescription']").value
+        const userAddress = document.querySelector("input[name='serviceAddress']").value
+        const userBudget = document.querySelector("input[name='serviceBudget']").value
+        const userDate = document.querySelector("input[name='serviceDate']").value
+
+        // Make an object out of the user input
+        const dataToSendToAPI = {
+            description: userDescription,
+            address: userAddress,
+            budget: userBudget,
+            neededBy: userDate
+        }
+
+        // Send the data to the API for permanent storage
+        sendDogScoreToAPI(dataToSendToAPI)
+    }
+})
 
 const displayCat = async () => {
     const catData = await fetchCat()
@@ -63,7 +93,7 @@ const renderDogToDOM = () => {
     <article>
         <section class="card">
         <img src="${getDog()[0].url}" alt="image" class="image">
-        <button onclick="pushDog" type="button" class="button">Dogs!!!</button>
+        <button onclick="pushDog" type="button" id="button">Dogs!!!</button>
     </section>
     </article>`;
 document.getElementById("dog").innerHTML = html

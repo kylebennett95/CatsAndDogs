@@ -10,7 +10,7 @@ const applicationState = {
 }
 
 
-// fetch commands go to the API
+// fetch functions get data from the API's, turn them into js readable code and put them into the application state object
 export const fetchCatScore = async () => {
     const dataFetch = await fetch(`${scoreAPI}/catVote`)
     const jsonCatScore = await dataFetch.json()
@@ -35,12 +35,12 @@ export const fetchDog = async () => {
     applicationState.dogs = jsonDog;
 }
 
+//get functions go into the application state and return the data in the .map or .length format we ask for
 export const getCatScore = () => {
     return applicationState.catVote.length;
 }
 
 export const getDogScore = () => {
-    console.log(typeof applicationState.dogVote.length)
     return applicationState.dogVote.length;
 }
 
@@ -52,7 +52,37 @@ export const getDog = () => {
     return applicationState.dogs.map((x) => ({ ...x }));
 }
 
+export const sendCatScoreToAPI = async (vote) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(vote)
+    }
+  
+    const catContainer = document.querySelector("#container");
+    const response = await fetch(`${scoreAPI}/catVote`, fetchOptions);
+    const responseJson = await response.json();
+    catContainer.dispatchEvent(new CustomEvent("stateChanged"));
+    return responseJson;
+  }
 
+  export const sendDogScoreToAPI = async (vote) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(vote)
+    }
+  
+    const dogContainer = document.querySelector("#container");
+    const response = await fetch(`${scoreAPI}/dogVote`, fetchOptions);
+    const responseJson = await response.json();
+    dogContainer.dispatchEvent(new CustomEvent("stateChanged"));
+    return responseJson;
+  }
 
 
 //UNTESTED CODE BELOW

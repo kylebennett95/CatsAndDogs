@@ -1,4 +1,4 @@
-import { fetchCat } from "./voteData.js";
+import { fetchCat, sendCatScoreToAPI } from "./voteData.js";
 import { fetchDog} from "./voteData.js";
 
 const catContainer = document.querySelector("#catPic")
@@ -30,6 +30,6 @@ catContainer.addEventListener("click", clickEvent => {
         }
 
         // Send the data to the API for permanent storage
-        sendRequest(dataToSendToAPI)
+        sendCatScoreToAPI(dataToSendToAPI)
     }
 })

@@ -1,15 +1,19 @@
 import { fetchCat, sendCatScoreToAPI } from "./voteData.js";
 import { fetchDog} from "./voteData.js";
+import { renderCatScoreToDOM, renderDogScoreToDOM } from "./main.js"
+import { addCat, addDog } from "./voteData.js";
+
+
 
 const catContainer = document.querySelector("#catPic")
 
 
 const scoreCat = async () => {
-    let fetchCat = await fetchCat()
+    let renderCat = await renderCatScoreToDOM()
 }
 
-const addOne = () => {
-
+const scoreDog = async () => {
+    let renderDog = await renderDogScoreToDOM()
 }
 
 
@@ -32,4 +36,10 @@ catContainer.addEventListener("click", clickEvent => {
         // Send the data to the API for permanent storage
         sendCatScoreToAPI(dataToSendToAPI)
     }
+
+    getCat(dataToSendToAPI)
+    getDog(dataToSendToAPI)
+
 })
+
+

@@ -52,6 +52,7 @@ export const getDog = () => {
     return applicationState.dogs.map((x) => ({ ...x }));
 }
 
+
 export const sendCatScoreToAPI = async (vote) => {
     const fetchOptions = {
         method: "POST",
@@ -82,6 +83,7 @@ export const sendCatScoreToAPI = async (vote) => {
     const responseJson = await response.json();
     dogContainer.dispatchEvent(new CustomEvent("stateChanged"));
     return responseJson;
+
   }
 
 

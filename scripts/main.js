@@ -99,7 +99,15 @@ const renderDogToDOM = () => {
 document.getElementById("dog").innerHTML = html
 }
 
-displayDog()
-displayCat()
-displayCatScore()
-displayDogScore()
+const render = async () => {
+    await displayDog()
+    await displayCat()
+    await displayCatScore()
+    await displayDogScore()
+}
+
+render()
+
+document.addEventListener("stateChanged", (e) => {
+    render();
+  });

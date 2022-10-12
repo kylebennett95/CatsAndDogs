@@ -4,7 +4,7 @@ const catContainer = document.querySelector("#catButton");
 const dogContainer = document.querySelector("#dogButton");
 
 catContainer.addEventListener("click", async (clickEvent) => {
-  if (clickEvent.target.id === "cat") {
+  if (clickEvent.target.id === "catButton") {
     // Make an object out of the user input
     const dataToSendToAPI = {
       catVote: 1,
@@ -18,7 +18,7 @@ catContainer.addEventListener("click", async (clickEvent) => {
 
 dogContainer.addEventListener("click", (clickEvent) => {
   console.log("HI");
-  if (clickEvent.target.id === "dog") {
+  if (clickEvent.target.id === "dogButton") {
     // Make an object out of the user input
     const dataToSendToAPI = {
       dogVote: 1,

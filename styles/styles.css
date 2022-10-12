@@ -114,6 +114,18 @@ html {
   font-size: 50px;
 }
 
+#catButton,
+#dogButton {
+  outline: none;
+  width: 320px;
+  padding: 5px;
+  background: lightgray;
+  border: lightgray;
+  position: absolute;
+  bottom: 25px;
+  transform: translate(50%, 50%);
+}
+
 /* .text {
   text-align: center;
 }

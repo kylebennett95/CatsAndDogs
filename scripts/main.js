@@ -1,5 +1,33 @@
 import { fetchCat, getDogScore, getCatScore, fetchDogScore, fetchCatScore, getDog, getCat, fetchDog, sendCatScoreToAPI, sendDogScoreToAPI } from "./voteData.js";
 
+const catContainer = document.querySelector("#catButton");
+const dogContainer = document.querySelector("#dogButton");
+
+catContainer.addEventListener("click", async (clickEvent) => {
+  if (clickEvent.target.id === "cat") {
+    // Make an object out of the user input
+    const dataToSendToAPI = {
+      catVote: 1,
+    };
+
+    // Send the data to the API for permanent storage
+    // const APICall = await sendCatScoreToAPI(dataToSendToAPI);
+    sendCatScoreToAPI(dataToSendToAPI);
+  }
+});
+
+dogContainer.addEventListener("click", (clickEvent) => {
+  console.log("HI");
+  if (clickEvent.target.id === "dog") {
+    // Make an object out of the user input
+    const dataToSendToAPI = {
+      dogVote: 1,
+    };
+
+    // Send the data to the API for permanent storage
+    sendDogScoreToAPI(dataToSendToAPI);
+  }
+});
 
 const displayCat = async () => {
   const catData = await fetchCat();
@@ -46,7 +74,7 @@ const renderCatToDOM = () => {
     <article>
         <section class="card">
         <img src="${getCat()[0].url}" alt="image" class="image" id ="catPic">
-        <button onclick="pushCat" type="button" id="catButton">Cats!!!</button>
+        
     </section>
     </article>`;
   document.getElementById("cat").innerHTML = html;
@@ -57,7 +85,7 @@ const renderDogToDOM = () => {
     <article>
         <section class="card">
         <img src="${getDog()[0].url}" alt="image" class="image">
-        <button onclick="pushDog" type="button" id="dogButton">Dogs!!!</button>
+        
     </section>
     </article>`;
   document.getElementById("dog").innerHTML = html;
@@ -75,4 +103,3 @@ render();
 document.addEventListener("stateChanged", (e) => {
   render();
 });
-

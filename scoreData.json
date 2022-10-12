@@ -1,4 +1,14 @@
 {
-    "dogVote": [],
-    "catVote": []
-  }
+  "dogVote": [
+    {
+      "dogVote": 1,
+      "id": 1
+    }
+  ],
+  "catVote": [
+    {
+      "catVote": 1,
+      "id": 1
+    }
+  ]
+}

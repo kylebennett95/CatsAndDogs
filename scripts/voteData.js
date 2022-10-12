@@ -52,6 +52,7 @@ export const getDog = () => {
 };
 
 export const sendCatScoreToAPI = async (vote) => {
+  console.log(vote);
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -68,6 +69,7 @@ export const sendCatScoreToAPI = async (vote) => {
 };
 
 export const sendDogScoreToAPI = async (vote) => {
+  console.log(vote);
   const fetchOptions = {
     method: "POST",
     headers: {
